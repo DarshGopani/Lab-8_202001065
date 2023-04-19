@@ -10,9 +10,9 @@
 
 ## Code For Boa.java:
 
-package Lab8package;
+	package Lab8package;
 
-public class Boa {
+	public class Boa {
 	private String name;
   
 	private int length; // the length of the boa, in feet
@@ -48,15 +48,15 @@ public class Boa {
 
 ## Test Case code:
 
-package Lab8package;
+	package Lab8package;
 
-import static org.junit.Assert.*;
+	import static org.junit.Assert.*;
 
-import org.junit.Before;
-import org.junit.Test;
+	import org.junit.Before;
+	import org.junit.Test;
 
 
-public class BoaTest {
+	public class BoaTest {
 
 	@Test
 	public void testIsHealthy() {
