@@ -1,1 +1,119 @@
 # Lab-8_202001065
+
+## Name: Darsh Gopani (202001065) 
+
+
+![1](https://user-images.githubusercontent.com/97873933/233041945-20fb9794-e72a-4595-b7ec-41c9ed129c82.png)
+![2](https://user-images.githubusercontent.com/97873933/233041967-042eff02-4546-4455-8108-f2a05632cd6e.png)
+![3](https://user-images.githubusercontent.com/97873933/233041983-276f604c-1482-4a89-ab74-717fb76f3a33.png)
+![4](https://user-images.githubusercontent.com/97873933/233042001-681b19a6-7ef7-40ac-b59e-cdeb4b6bde87.png)
+
+## Code For Boa.java:
+
+package Lab8package;
+
+public class Boa {
+	private String name;
+  
+	private int length; // the length of the boa, in feet
+	private String favoriteFood;
+  
+	public Boa (String name, int length, String favoriteFood){
+	this.name = name;
+  
+	this.length = length;
+  
+	this.favoriteFood = favoriteFood;
+	}
+	// returns true if this boa constrictor is healthy
+  
+	public boolean isHealthy(){
+  
+	return this.favoriteFood.equals("granola bars");
+	}
+	// returns true if the length of this boa constrictor is
+  
+	// less than the given cage length
+	public boolean fitsInCage(int cageLength){
+  
+	return this.length < cageLength;
+	}
+	public int lengthInInches() {
+  
+		return this.length * 12;
+    
+	}
+  
+	}
+
+## Test Case code:
+
+package Lab8package;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+
+public class BoaTest {
+
+	@Test
+	public void testIsHealthy() {
+		Boa healthyBoa = new Boa("Healthy Boa", 5, "granola bars");
+		Boa unhealthyBoa = new Boa("Unhealthy Boa", 5, "junk food");
+		
+		assertTrue(healthyBoa.isHealthy());
+		assertFalse(unhealthyBoa.isHealthy());
+	}
+
+	@Test
+	public void testFitsInCage() {
+		Boa smallBoa = new Boa("Small Boa", 5, "granola bars");
+		Boa largeBoa = new Boa("Large Boa", 10, "granola bars");
+		
+		assertTrue(smallBoa.fitsInCage(6));
+		assertTrue(largeBoa.fitsInCage(12));
+		
+	}
+	
+	@Before
+	public void setUp() throws Exception {
+	Boa jen = new Boa("Jennifer", 2, "grapes");
+	Boa ken = new Boa ("Kenneth", 3, "granola bars");
+	
+	assertFalse(ken.fitsInCage(2));
+    assertFalse(ken.fitsInCage(3));
+    assertTrue(ken.fitsInCage(5));
+    
+    assertFalse(jen.fitsInCage(1));
+    assertFalse(jen.fitsInCage(2));
+    assertTrue(jen.fitsInCage(3));
+	}
+	
+	@Test
+	public void TestLengthInInches() {
+		Boa darsh = new Boa("Jennifer", 2, "grapes");
+		Boa dhyan = new Boa ("Kenneth", 3, "granola bars");
+		
+		assertEquals(23,darsh.lengthInInches());
+	}
+
+}
+
+Results for feet to inch
+
+![5](https://user-images.githubusercontent.com/97873933/233042625-4fd05430-ab73-4449-a944-51dddd1cc881.png)
+
+Several annotations: @Test-annotated test methods will be executed, although the order of the tests is not guaranteed.
+
+This implies that during test execution, the tests may execute in any order. Writing tests that are independent of one another and do not rely on a particular execution order is crucial. 
+
+Every test will be executed before any method labelled with the @Before annotation. 
+This enables us to put up standard test fixtures or carry out any required setup procedures prior to each test run. 
+Use @Before, for instance, to initialise objects, build up dummy objects, or carry out any other setup tasks that are required. 
+Any method with the @After annotation will be invoked after each test has finished running. 
+This allows us to clean up any resources or perform any necessary teardown steps after each test runs. For example, we can use @After to release resources, reset state, or perform any other necessary cleanup operations.
+
+
+
